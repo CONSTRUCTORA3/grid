@@ -1,0 +1,127 @@
+/*Reset everything to zero.*/
+*{
+    margin:0;/*This took away my scroll bar on the far right side of my website.*/
+    padding:0;
+    box-sizing: border-box;
+}
+
+.boxes{
+
+width: 100%;/*The width will cover 100% of the page.*/
+/*height: 100vh;*//*100vh means 100% of the view port height.  The 12 boxes are going past the fixed height of 100vh I will use a min-height property.*/
+min-height:100vh;
+
+/*To do a basic grid, do on this parent container display grid which makes the 12 child boxes individually a grid item.*/
+display:grid;
+
+/*To create a 4 by 3 grid you need 4 columns and 3 rows.*/
+/*grid-template-columns: repeat(4, 1fr); *//*Now I have 4 columns of 200px of equal size.  Will remove 
+200px 200px 200px 200px ans use 1fr 1fr 1fr 1fr to get the black background of the parent container will go away, so the boxes can take up the entire screen. 1fr is one fractional unit meaning I want my boxes or 4 columns to have equal spacing across.  The short version is to use the value of repeat(4, 1 fr).*/
+
+/*Instead of using above grid-template-columns: repeat(4, 1fr) to make the boxes responsive use grid-template-columns: repeat(auto-fill, minmax(200px, 1fr);*/
+/*grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));*/ /*Your your minmax part means minimum width for each box is 200px.  The 1fr gives an equal size of 200px for each grid item or box.  So if your screen is small and only 400px wide then your screen will show two boxes in each row if the screen gets bigger it will show more 200px size boxes in a row.*/
+
+grid-template-columns: repeat(6, 1fr);/*Gives me 6 columns*/
+grid-template-rows: repeat(4, 1fr);/*Gives me 4 rows.*/
+
+background-color:#333;
+
+grid-gap:10px;/*This puts a grid gap between your boxes.*/
+}
+
+/*Each box will have the following:*/
+.box{
+    
+}
+
+.box-1{
+
+    background-color:#f00;
+    
+
+}
+.box-2{
+
+   /* background-color:yellow;*//*Will comment this out to use linear-gradient for background property.*/
+    background:linear-gradient(to right,rgb(202, 205, 18),rgb(110, 179, 179), rgb(116, 16, 33));/*to right makes my gradient colors go from left to right instead of from top to bottom.*/
+    grid-column: span 3;
+    grid-row: span 2;
+
+}
+.box-3{
+
+    background-color:turquoise;
+    grid-column: span 2;
+
+}
+.box-4{
+
+    background-color:olivedrab;
+    
+
+}
+.box-5{
+
+    background-color:oldlace;
+    grid-column: span 2;
+
+}
+.box-6{
+
+    background-color:goldenrod;
+    
+
+}
+.box-7{
+
+    background-color:green;
+    
+
+}
+.box-8{
+
+    /*background-color:palevioletred;*//*Will comment this out to use radial-gradient for background property.*/
+    background:radial-gradient(circle, blue, hotpink, brown);
+    grid-column: span 2;
+    grid-row: span 2;
+}
+.box-9{
+
+    background-color:purple;
+    
+
+}
+.box-10{
+
+    background-color:powderblue;
+    
+
+}
+.box-11{
+
+    /*background-color:black;*/
+    /*just playing around with radial-gradient instead of using background-color.*/
+    background: radial-gradient(circle at 100%, rgb(167, 7, 23), rgb(151, 6, 6) 50%, #eee 70%, rgb(114, 4, 4) 75%);/*If I put the light color at 75% then I will not see the light circle rod that is not blended in right now.*/
+
+}
+.box-12{
+
+    background-color:blanchedalmond;
+    
+
+}
+.box-13{
+
+    background-color:gray;
+    
+
+}
+.box-14{
+
+    /*background-color:blue;*/  
+    /*just playing around with radial-gradient instead of using background-color.*/
+    background: radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%);
+
+    
+
+}
